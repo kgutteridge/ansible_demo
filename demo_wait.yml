@@ -12,7 +12,7 @@
       debug: var=random_number
     - name: Pause for a random amount of seconds
         pause:
-          seconds: {{6 + random_number}}
+          seconds: 20
     - name: Closing job
       debug:
         msg: "Job complete it took {{6 + random_number}} seconds"
