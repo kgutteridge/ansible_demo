@@ -15,6 +15,4 @@
           seconds: 20
     - name: Closing job
       debug:
-        msg: "Job complete it took {{6 + random_number}} seconds"
-
- 
+        msg: "Job complete it took 20 seconds"
