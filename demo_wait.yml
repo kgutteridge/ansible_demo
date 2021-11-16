@@ -1,4 +1,6 @@
 - name: Hello World Sample
+  hosts: 127.0.0.1
+  connection: local
   tasks:
     - name: Hello Message
       debug:
@@ -7,11 +9,12 @@
       set_fact:
         random_number: "{{ 40 | random }}"
       run_once: yes
-    - name: Print the random number
-      debug: var=random_number
+    - name: Pause for a min amount of time
+      pause:
+        seconds: 6
     - name: Pause for a random amount of seconds
-        pause:
-          seconds: 20
+      pause:
+        seconds: "{{ random_number }}"
     - name: Closing job
       debug:
-        msg: "Job complete it took 20 seconds"
+        msg: "Demo job complete"
