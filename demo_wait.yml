@@ -1,9 +1,20 @@
 - name: Hello World Sample
   hosts: all
   tasks:
-    - name: pause Demo 
-       pause:
-       minutes: 5
     - name: Hello Message
-        debug:
-        msg: "Hello World!"
+      debug:
+        msg: "Hello World! doing a demo"
+    - name: Get a random amount of time
+      set_fact:
+        random_number: "{{ 40 | random }}"
+      run_once: yes
+    - name: Print the random number
+      debug: var=random_number
+    - name: Pause for a random amount of seconds
+        pause:
+          seconds: {{6 + random_number}}
+    - name: Closing job
+      debug:
+        msg: "Job complete it took {{6 + random_number}} seconds"
+
+ 
