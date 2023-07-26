@@ -15,6 +15,15 @@
     - name: Pause for a random amount of seconds
       pause:
         seconds: "{{ random_number }}"
+    - name: 1 Pause for a random amount of seconds
+      pause:
+        seconds: "{{ random_number }}"
+    - name: 2 Pause for a random amount of seconds
+      pause:
+        seconds: "{{ random_number }}"
+    - name: 3 Pause for a random amount of seconds
+      pause:
+        seconds: "{{ random_number }}"
     - name: Closing job
       debug:
         msg: "Demo job complete"
